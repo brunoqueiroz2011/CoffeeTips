@@ -1,0 +1,11 @@
+<div class="form-group" [class.has-success]="hasSuccess()"
+                        [class.has-error]="hasError()">
+
+    <label for="inputSuccess" class="darkBrown col-sm-2 control-label ">{{label}}</label>
+    <!--<label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> {{label}}</label>-->
+    <div class="col-sm-10">
+      <ng-content></ng-content>
+    </div>
+    <span class="help-block marginSpanBlock" *ngIf="hasSuccess()"><i class="fa fa-check"></i> Ok</span>
+    <span class="help-block marginSpanBlock" *ngIf="hasError()"><i class="fa fa-remove"></i> {{errorMessage}}</span>
+  </div>

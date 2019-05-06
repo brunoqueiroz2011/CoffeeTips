@@ -1,0 +1,55 @@
+<section class="content-header darkBrown">
+  <h1>
+      Todos os eventos da {{nameCoffeeShop}}
+  </h1>
+</section>
+<section class="content">
+    <section class="invoice">
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title darkBrown">Tabela de Produtos</h3>
+    
+                  <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <!--<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+    
+                      <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover darkBrown">
+                    <tr>
+                      <th></th>
+                      <th>Nome</th>
+                      <th>Data</th>
+                      <th>Hora</th>
+                      <th>Local</th>
+                      <th>Qtd Pessoas</th>
+                      <th>Descrição</th>
+                      <th></th>
+                    </tr>
+                    <tr *ngFor="let myEvent of events">
+                      <td><a [routerLink]="['/event',myEvent.id]"><i class="fa fa-edit ligthBrown"></i></a></td>
+                      <td>{{myEvent.name}}</td>
+                      <td>{{myEvent.myDate}}</td>                      
+                      <td>{{myEvent.hour}}</td>
+                      <td>{{myEvent.local}}</td>
+                      <td>{{myEvent.qtdPeople}}</td>
+                      <td>{{myEvent.description}}</td>
+                      <td><a [routerLink]="['/home']"><i class="fa fa-remove ligthBrown"></i></a></td>
+                    </tr>                  
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+            </div>
+          </div>
+    </section>
+  </section>

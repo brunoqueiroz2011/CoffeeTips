@@ -1,0 +1,97 @@
+<!-- INíCIO do CONTEÚDO -->
+<section class="content-header darkBrown">
+  <h1>
+    Seu Perfil {{nameCoffeeShop}}
+  </h1>
+</section>
+
+<section class="content">
+  <section class="invoice">
+
+        <form  [formGroup]="profileForm" class="form-horizontal" novalidate>
+            <div class="col-xs-12">
+              <img class="profile-user-img img-responsive img-circle" src="../../assets/img/restaurants/coffeecorner.png" alt="User profile picture">
+
+              <input  type="file" formControlName="imgLogo" (change)="onFileSelected($event)" style="display: none" #inputFile>
+              <button class="EditLogo darkBrown" type="button" (click)="inputFile.click()">Editar Logo</button>              
+              <h3 class="profile-username text-center">{{inputNameCoffee.value}}</h3>
+          </div>
+          
+          <ctd-input-container errorMessage="Campo Obrigatório e com 5 caracteres" label="* Nome">
+            <input class="form-control inputProfile" #inputNameCoffee formControlName="name" placeholder="Nome" autocomplete="off">
+          </ctd-input-container>
+          
+          <ctd-input-container errorMessage="Campo Obrigatório" label="* Descrição">            
+            <textarea class="form-control inputProfile" formControlName="description" placeholder="Descrição da Cafeteria"  autocomplete="off"></textarea>
+          </ctd-input-container>
+
+          <ctd-input-container errorMessage="Campo Obrigatório" label="* Bairro">
+            <input class="form-control inputProfile" formControlName="neighborhood" placeholder="Bairro" autocomplete="off">
+          </ctd-input-container>          
+
+          <ctd-input-container errorMessage="Campo Obrigatório" label="* Endereço">
+            <input class="form-control inputProfile" formControlName="address" placeholder="Endereço completo da Cafeteria" autocomplete="off">
+          </ctd-input-container>
+
+          <ctd-input-container errorMessage="Campo Obrigatório" label="* Horários">
+            <input class="form-control inputProfile" formControlName="horary" placeholder="Horários de atendimento da Cafeteria" autocomplete="off">
+          </ctd-input-container>          
+
+          <ctd-input-container errorMessage="Campo Obrigatório" label="* Telefone">
+            <input class="form-control inputProfile" formControlName="telephone" placeholder="Telefone ou Celular" autocomplete="off">
+          </ctd-input-container>
+          
+          <ctd-input-container errorMessage="E-mail invalido" label="E-mail">
+            <input class="form-control inputProfile" formControlName="email" placeholder="E-mail" autocomplete="off">                    
+          </ctd-input-container>                                
+
+          <ctd-input-container errorMessage="" label="Instagram">
+            <input class="form-control inputProfile" formControlName="intagram" placeholder="" autocomplete="off">
+          </ctd-input-container>
+
+          <ctd-input-container errorMessage="" label="Facebook">
+            <input class="form-control inputProfile" formControlName="facebook" placeholder="" autocomplete="off">
+          </ctd-input-container>
+
+          <div class="form-group" style="margin-left: auto;">          
+            <label for="inputSuccess" class="col-sm-2 control-label darkBrown" style="width: 18%;">* Formas de Pagamento:</label>
+
+            <label class="marginPayment darkBrown" formArrayName="paymentOptions" *ngFor="let payment of profileForm.controls.paymentOptions.controls; let i = index">
+              <input type="checkbox" [formControlName]="i">
+              {{paymentOptions[i].name}}
+            </label>                        
+                  
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">                
+              <div class="checkbox darkBrown">
+                <label>
+                  <input type="checkbox" formControlName="termsConditions"> Eu concordo com os <a href="#">Termos e Condições</a>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+       
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-10">              
+              <button (click)="checkProfile(profileForm.value)" class="btn btnColor" 
+              [disabled]="!profileForm.valid">
+              <i class="fa fa-save" style="padding-right: 10%;"></i>  Salvar
+            </button>
+            </div>
+          </div>
+        <!--<div class="row">
+          <div class="col-xs-12">
+            <button (click)="checkOrder(orderForm.value)" class="btn btn-success pull-right" 
+              [disabled]="!orderForm.valid || cartItems().length === 0">
+              <i class="fa fa-credit-card"></i> Concluir Pedido
+            </button>
+          </div>
+        </div>-->
+
+    </section>
+  </section>
+<!-- FIM  do CONTEÚDO -->

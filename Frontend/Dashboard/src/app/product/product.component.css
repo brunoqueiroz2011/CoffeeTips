@@ -1,0 +1,28 @@
+.EditLogo{
+    margin-left: 45%;
+    margin-top: 1%;
+    text-align: center;
+}
+.inputProfile{
+    width: 60%;
+}
+
+.inputEmail{
+    margin-left: 6%
+}
+
+.marginPayment{
+    margin-left: 18.67%;
+}
+
+label {
+    display: block;
+}
+
+.cor-label{
+    color: #DA6F0D !important;
+}
+
+.corTitle h1{
+    color: #510E05 !important;        
+}

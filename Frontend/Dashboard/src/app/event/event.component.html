@@ -1,0 +1,51 @@
+<section class="content-header darkBrown">
+    <h1>
+      Cadastre seu novo evento {{nameCoffeeShop}}
+    </h1>
+  </section>
+  <section class="content">
+      <section class="invoice">
+          <form  [formGroup]="myEventForm" class="form-horizontal" novalidate>
+            <div class="col-xs-12">
+              <img class="profile-user-img img-responsive img-circle" src="../../assets/img/foods/espreso.png" alt="User profile picture">
+  
+              <input  type="file" formControlName="imgLogo" (change)="onFileSelected($event)" style="display: none" #inputFile>
+              <button class="EditLogo darkBrown" type="button" (click)="inputFile.click()">Editar imagem</button>              
+              <h3 class="profile-username text-center">{{inputNameEvent.value}}</h3>
+            </div>
+            
+            <ctd-input-container errorMessage="Campo Obrigatório e com 5 caracteres" label="* Nome">
+              <input class="form-control inputProfile" #inputNameEvent formControlName="name" placeholder="Nome do seu Evento" autocomplete="off">
+            </ctd-input-container>
+            
+            <ctd-input-container errorMessage="Campo Obrigatório" label="* Descrição">            
+              <textarea class="form-control inputProfile" formControlName="description" placeholder="Descrição do seu Evento"  autocomplete="off"></textarea>
+            </ctd-input-container>                
+                        
+            <ctd-input-container errorMessage="Campo Obrigatório" label="* Data">
+              <input class="form-control inputProfile" formControlName="myDate" placeholder="Qual a data do seu Evento?" autocomplete="off">
+            </ctd-input-container>  
+
+            <ctd-input-container errorMessage="Campo Obrigatório" label="* Hora">
+                <input class="form-control inputProfile" formControlName="hour" placeholder="Qual a hora do seu Evento?" autocomplete="off">
+              </ctd-input-container>
+
+            <ctd-input-container errorMessage="Campo Obrigatório" label="* Local">
+              <input class="form-control inputProfile" formControlName="local" placeholder="Qual o local do seu Evento? Ex:12:00" autocomplete="off">
+            </ctd-input-container>    
+
+            <ctd-input-container errorMessage="Campo Obrigatório" label="* Qtd Pessoas">
+              <input class="form-control inputProfile" formControlName="qtdPeople" placeholder="Quantidade de pessoa seu evento suporta." autocomplete="off">
+            </ctd-input-container>    
+          </form>
+         
+          <div class="row">
+              <div class="col-sm-offset-2 col-sm-10">              
+                <button (click)="checkEvent(myEventForm.value)" class="btn btnColor" 
+                [disabled]="!myEventForm.valid">
+                <i class="fa fa-save" style="padding-right: 10%;"></i>  Salvar
+              </button>
+              </div>
+            </div>      
+      </section>
+    </section>

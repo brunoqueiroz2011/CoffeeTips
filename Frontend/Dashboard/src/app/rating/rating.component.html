@@ -1,0 +1,62 @@
+<section class="content-header darkBrown">
+    <h1>
+        Todos os produto da {{nameCoffeeShop}}
+    </h1>
+  </section>
+  <section class="content">
+    <section class="invoice">
+        <!--<div class="box box-danger">
+            <div class="box-header with-border">
+              <h3 class="box-title">Quantidade de Curtidas</h3>            
+            </div>
+            <div class="box-body">
+              <canvas id="pieChart" style="height:200px"></canvas>
+            </div>
+            !-- /.box-body --
+          </div>
+          !-- /.box -->
+  
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title darkBrown">Avaliações dos Clientes</h3>
+    
+                  <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <!--<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+    
+                      <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover darkBrown">
+                    <tr>                      
+                      <th>Nome</th>
+                      <th>Data</th>
+                      <th>Atendimento</th>
+                      <th>Comida</th>
+                      <th>Preço</th>
+                      <th>Comentario</th>                      
+                    </tr>
+                    <tr *ngFor="let rate of ratings">
+                      <td>{{rate.name}}</td>
+                      <td>{{rate.date | date : 'dd/MM/yyyy' : timezone}}</td>                      
+                      <td>{{rate.rating}}</td><!--Futuramente tera três tipos de avaliações-->                      
+                      <td>{{rate.rating}}</td>                      
+                      <td>{{rate.rating}}</td>                      
+                      <td>{{rate.comments}}</td>                                            
+                    </tr>                  
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+            </div>
+          </div>
+    </section>
+  </section>

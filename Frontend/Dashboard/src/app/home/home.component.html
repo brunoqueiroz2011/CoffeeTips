@@ -1,0 +1,88 @@
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+  </section>
+
+  <section class="content">
+
+    <div class="jumbotron welcome-jumbotron">
+       <h1 class="darkBrown">Bem vindo ao seu Dashboard!</h1>
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box cor15">
+            <div class="inner">
+              <h3>{{qtdProducts}}</h3>
+
+              <p>Produtos</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <a [routerLink]="['/product-details']" class="small-box-footer">
+              Mais Informções <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box cor15">
+            <div class="inner">
+              <h3>{{qtdEvent}}</h3>
+
+              <p>Eventos</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-calendar"></i>
+            </div>
+            <a [routerLink]="['/event-details']" class="small-box-footer">
+              Mais Informções <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box cor15">
+            <div class="inner">
+              <h3>{{qtdLikes}}</h3>
+
+              <p>Relatório</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-dashboard"></i>
+            </div>
+            <a [routerLink]="['/report']" class="small-box-footer">
+              Mais Informções <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box cor15">
+            <div class="inner">
+              <h3>{{qtdComments}}</h3>
+
+              <p>Avaliações</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-thumbs-up"></i>
+            </div>
+            <a [routerLink]="['/rating']" class="small-box-footer">
+              Mais Informções <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+
+
+
+
+    </div>
+
+  </section>
+  <!-- FIM DO CONTEÚDO -->
