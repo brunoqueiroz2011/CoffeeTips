@@ -4,6 +4,8 @@ import { Product } from './product.model';
 import { RadioOption } from 'app/shared/radio/radio-option-model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from './product.service';
+import { validateConfig } from '@angular/router/src/config';
+import { UploadInput, UploadOutput } from 'ngx-uploader';
 
 @Component({
   selector: 'ctd-product',
@@ -13,6 +15,8 @@ import { ProductService } from './product.service';
 export class ProductComponent implements OnInit {
 
   @Input() nameCoffeeShop: string = this.routes.snapshot.params['name']
+
+  numberPattern = /^[0-9]*$/
 
   nameProduct: string = 'Afogato'
 
@@ -36,12 +40,17 @@ export class ProductComponent implements OnInit {
       name: this.formBuilder.control('', [Validators.required]),
       description: this.formBuilder.control('',[Validators.required]),
       ingredients: this.formBuilder.control('',[Validators.required]),      
+      price: this.formBuilder.control('',[Validators.required, Validators.pattern(this.numberPattern), Validators.minLength(1)]),
       statusProduct: this.formBuilder.control('',[Validators.required])      
     })
   }
 
-  onFileSelected(event){    
-    this.selectedFile = event.target.files[0].name        
+  onFileSelected(file: UploadOutput){    
+    //this.selectedFile = event.target.files[0].name
+    const reader = new FileReader();
+    if (event.target['files'] && event.target['files'].length > 0) {
+      const file = event
+    }
   }
 
   checkProduct(product: Product){        
