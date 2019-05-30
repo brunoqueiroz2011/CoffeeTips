@@ -9,12 +9,12 @@ export class HomeService{
     constructor(private http: Http){}
 
     qtdPruducts():Observable<string>{
-        return this.http.get(`${environment.baseURL}/products`)
+        return this.http.get(`${environment.baseURL}/product`)
                         .map(res => res.json())                        
     }
     
     qtdEvents():Observable<string>{
-        return this.http.get(`${environment.baseURL}/events`)
+        return this.http.get(`${environment.baseURL}/event`)
                         .map(res => res.json())                        
     }
 
