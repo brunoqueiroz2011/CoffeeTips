@@ -7,8 +7,7 @@ const productSchema = new mongoose.Schema({
     Ingredients:{type:String, require:[true,'Informe os ingredientes do produto']},
     description:{type:String, require:[true,'Informe a descrição do produto']},
     price:{type:String, require:[true,'Informe a descrição do produto']},
-    status:{type:String, min: 0, require:true,
-        enum:['Ativo','Futuro','Desativado']}
+    statusProduct:{type:String, require:[true,'Informe o status do produto']}
 })
 
 module.exports = restful.model('product', productSchema)
