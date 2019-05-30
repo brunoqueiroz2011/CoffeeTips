@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
     product : number
 
     qtdProducts: string
-    qtdEvent: string = "400"
-    qtdLikes: string = "400"    
+    qtdEvent: string = ""
+    qtdReport: string = ""    
     qtdComments: string
   
 
