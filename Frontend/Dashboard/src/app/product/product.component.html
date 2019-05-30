@@ -9,7 +9,7 @@
           <div class="col-xs-12">
             <img class="profile-user-img img-responsive img-circle" src="../../assets/img/foods/espreso.png" alt="User profile picture">
 
-            <input type="file" formControlName="imgLogo" (change)="onFileSelected($event)" style="display: none" #inputFile>
+            <input type="file" formControlName="imgLogo" ngFileSelect (change)="onFileSelected($event)" style="display: none" #inputFile>
             <button class="EditLogo darkBrown" type="button" (click)="inputFile.click()">Editar imagem</button>              
             <h3 class="profile-username text-center">{{inputNameProduct.value}}</h3>
         </div>
@@ -20,6 +20,10 @@
         
         <ctd-input-container errorMessage="Campo Obrigatório" label="* Descrição">            
           <textarea class="form-control inputProfile" formControlName="description" placeholder="O que é o produto?"  autocomplete="off"></textarea>
+        </ctd-input-container>
+
+        <ctd-input-container errorMessage="Campo Obrigatório" label="* Preço">
+          <input class="form-control inputProfile" formControlName="price" placeholder="Preço do produto" autocomplete="off">
         </ctd-input-container>
 
         <ctd-input-container errorMessage="Campo Obrigatório" label="* Ingredientes">
