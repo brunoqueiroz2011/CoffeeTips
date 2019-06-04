@@ -1,8 +1,10 @@
 const express = require('express')
 
-module.exports = function (server){
+module.exports = function (server, multipartMiddleware){
     const router = express.Router()
     server.use('/api', router)
+
+
 
     const ctbCoffeShop = require('../controllers/coffeshop/coffeshopService')
     ctbCoffeShop.register(router,'/coffeshop')
@@ -19,4 +21,7 @@ module.exports = function (server){
     const ctbFavorite = require('../controllers/favorite/favoriteService')
     ctbFavorite.register(router,'/favorite')
     
+    const uploadFileService = require('../Controllers/uploadFiles/uploadFileService')
+    router.route('/uploadGet').get(uploadFileService.getFiles)
+    router.route('/uploadPost').post(multipartMiddleware,uploadFileService.postFiles)
 }

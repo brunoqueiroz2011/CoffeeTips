@@ -9,8 +9,7 @@ import { Injectable } from '@angular/core';
 export class ProductService{
     constructor(private http: Http){}
 
-    postProduct(product: Product): Observable<string>{
-        console.log(product)
+    postProduct(product: Product): Observable<string>{        
         const headers = new Headers()
         headers.append('Content-Type','application/json')
         return this.http.post(`${environment.baseURL}/product`,
@@ -24,5 +23,20 @@ export class ProductService{
         return this.http.get(`${environment.baseURL}/product`)
                         .map(res => res.json())
                         .map(product => product)
+    }
+
+    uploadImagens(formData : FormData):Observable<String>{
+        console.log(formData);
+        const headers = new Headers()
+        headers.append('Content-Type','application/json')
+        return this.http.post(`${environment.baseURL}/uploadPost`,
+                               formData,
+                              new RequestOptions({headers: headers}))
+                        .map(res=>res.json())                        
+    }
+    
+    getFile():Observable<Product>{
+        return this.http.get(`${environment.baseURL}/uploadGet`)
+                        .map(res => res.json())                        
     }
 }

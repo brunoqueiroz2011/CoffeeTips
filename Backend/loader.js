@@ -1,3 +1,3 @@
-const server = require('./config/server')
+const master = require('./config/server')
 require('./config/database')
-require('./api/routes/router')(server)
+require('./api/routes/router')(master.server,master.multipartMiddleware)

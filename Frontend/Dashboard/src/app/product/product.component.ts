@@ -5,7 +5,6 @@ import { RadioOption } from 'app/shared/radio/radio-option-model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from './product.service';
 import { validateConfig } from '@angular/router/src/config';
-import { UploadInput, UploadOutput } from 'ngx-uploader';
 
 @Component({
   selector: 'ctd-product',
@@ -29,6 +28,8 @@ export class ProductComponent implements OnInit {
   
   productForm: FormGroup;
 
+  uploadedFiles: Array < File > ;
+
   constructor(private productService: ProductService,
               private router: Router,
               private routes: ActivatedRoute,
@@ -45,12 +46,19 @@ export class ProductComponent implements OnInit {
     })
   }
 
-  onFileSelected(file: UploadOutput){    
-    //this.selectedFile = event.target.files[0].name
-    const reader = new FileReader();
-    if (event.target['files'] && event.target['files'].length > 0) {
-      const file = event
+  onFileSelected(element){    
+    this.uploadedFiles = element.target.files;
+    console.log(element.target.files);
+    let formData = new FormData();
+    for (var i = 0; i < this.uploadedFiles.length; i++) {
+        formData.append("uploads[]", this.uploadedFiles[i], this.uploadedFiles[i].name);
+        console.log(this.uploadedFiles[i] + " - " +this.uploadedFiles[i].name);
+        console.log(formData);
     }
+    console.log(formData);
+    this.productService.uploadImagens(formData).subscribe((response)=>{
+      console.log('response received is ', response);
+    })
   }
 
   checkProduct(product: Product){        
