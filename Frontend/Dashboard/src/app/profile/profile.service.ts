@@ -12,7 +12,7 @@ export class ProfileService{
     postProfile(profile: Profile): Observable<string>{
         const headers = new Headers()
         headers.append('Content-Type','application/json')
-        return this.http.post(`${environment.baseURL}/profiles`,
+        return this.http.post(`${environment.baseURL}/user`,
                               JSON.stringify(profile),
                               new RequestOptions({headers: headers}))
                         .map(res=>res.json())
