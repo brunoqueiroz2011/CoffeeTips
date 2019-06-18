@@ -1,0 +1,263 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CoffeeTips",
+		"_postman_id": "6e0a06b8-2b31-1ade-3fa0-4d48735036e4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"url": "http://localhost:3003/oapi/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "bruno.queiroz2011@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Brun0@2311",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"url": "http://localhost:3003/oapi/signup",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bruno Queiroz",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "email",
+									"value": "bruno.queiroz2011@gmail.com",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "password",
+									"value": "Brun0@2311",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "confirm_password",
+									"value": "Brun0@2311",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "10523542461",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "cep",
+									"value": "54325670",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"url": "http://localhost:3003/api/user/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Coffeetoken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"url": "http://localhost:3003/api/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Coffeetoken}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bruno Queiroz",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "cpf",
+									"value": "12345678901",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "email",
+									"value": "bruno.queiroz@gmail.com",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "cep",
+									"value": "54325670",
+									"type": "text",
+									"description": ""
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"url": "http://localhost:3003/api/user/5d093c2549b6315020ae4bfc",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Coffeetoken}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cpf",
+									"value": "10523542461",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"url": "http://localhost:3003/api/user/5d093c2549b6315020ae4bfc",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Coffeetoken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"description": "",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"url": "http://localhost:3003/api/product",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwic2VsZWN0ZWQiOnt9LCJnZXR0ZXJzIjp7fSwiX2lkIjoiNWNlZTlmNGExNWViNjQyN2Q0ZGFmOWEwIiwid2FzUG9wdWxhdGVkIjpmYWxzZSwiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsiX2lkIjoiaW5pdCIsInVzZXJuYW1lIjoiaW5pdCIsInBhc3N3b3JkIjoiaW5pdCIsIm5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiY2VwIjoiaW5pdCIsIl9fdiI6ImluaXQifSwic3RhdGVzIjp7Imlnbm9yZSI6e30sImRlZmF1bHQiOnt9LCJpbml0Ijp7Il9pZCI6dHJ1ZSwidXNlcm5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJuYW1lIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiY2VwIjp0cnVlLCJfX3YiOnRydWV9LCJtb2RpZnkiOnt9LCJyZXF1aXJlIjp7fX0sInN0YXRlTmFtZXMiOlsicmVxdWlyZSIsIm1vZGlmeSIsImluaXQiLCJkZWZhdWx0IiwiaWdub3JlIl19LCJwYXRoc1RvU2NvcGVzIjp7fSwiY2FjaGVkUmVxdWlyZWQiOnt9LCIkc2V0Q2FsbGVkIjp7fSwiZW1pdHRlciI6eyJfZXZlbnRzIjp7fSwiX2V2ZW50c0NvdW50IjowLCJfbWF4TGlzdGVuZXJzIjowfSwiJG9wdGlvbnMiOnsic2tpcElkIjp0cnVlLCJpc05ldyI6ZmFsc2UsIndpbGxJbml0Ijp0cnVlfX0sImlzTmV3IjpmYWxzZSwiX2RvYyI6eyJfaWQiOiI1Y2VlOWY0YTE1ZWI2NDI3ZDRkYWY5YTAiLCJ1c2VybmFtZSI6ImJydW5vTWVzZW5nYSIsInBhc3N3b3JkIjoiJDJiJDEwJEJJdnIwaldLbThXMUc4ZFpJd01kcHVhT3E4M29EVmUxSnhoSm9tRFI2Lk9HUWQ4L0l2a3FpIiwibmFtZSI6IkJydW5vIFF1ZWlyb3oiLCJlbWFpbCI6ImJydW5vLnF1ZWlyb3pAZ21haWwuY29tIiwiY2VwIjo1NDMyNTY3MCwiX192IjowfSwiJGxvY2FscyI6e30sIiRpbml0Ijp0cnVlLCJpYXQiOjE1NjA4Nzc4OTMsImV4cCI6MTU2MDk2NDI5M30.l8kQvPkTeEtRsEHl_f9X73cWZmyB0OXdJYV6L3MJFhs",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
