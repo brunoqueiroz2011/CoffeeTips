@@ -7,9 +7,10 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 import { EventDetailsComponent } from './event/event-details/event-details.component';
 import { RatingComponent } from './rating/rating.component';
 import { ReportComponent } from './report/report.component';
+import { LoginComponent } from './login/login.component';
 
 export const ROUTES: Routes = [
-    {path:'', component: HomeComponent},
+    {path:'', component: LoginComponent},
     {path:'home', component: HomeComponent},
     {path:'profile/:name', component: ProfileComponent},
     {path: 'product/:name', component: ProductComponent},

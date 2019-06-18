@@ -23,6 +23,7 @@ import { EventDetailsComponent } from './event/event-details/event-details.compo
 import { RatingComponent } from './rating/rating.component';
 import { ReportComponent } from './report/report.component';
 import { RatingService } from './rating/rating.service';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -39,7 +40,8 @@ import { RatingService } from './rating/rating.service';
     ProductDetailsComponent,
     EventDetailsComponent,
     RatingComponent,
-    ReportComponent
+    ReportComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
